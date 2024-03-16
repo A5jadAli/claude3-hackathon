@@ -1,16 +1,28 @@
 import os
+import requests
 import streamlit as st
 from langchain_anthropic import ChatAnthropic
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from langchain.memory import ConversationBufferMemory
 from langchain_community.utilities import WikipediaAPIWrapper
+from streamlit_lottie import st_lottie
 
 # Function to check if Anthropic API key is provided
 def check_api_key():
     if 'ANTHROPIC_API_KEY' not in os.environ:
         st.warning("Please set the Anthropic API key. You can set it in the sidebar.")
         st.stop()
+
+def load_lottie_url(url):
+    r = requests.get(url)
+    if r.status_code!= 200:
+        return None
+    return r.json()
+
+lottie_coding = load_lottie_url("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
+
+st_lottie(lottie_coding, height=200, key="coding")
 
 # App framework
 st.sidebar.title('Settings')
