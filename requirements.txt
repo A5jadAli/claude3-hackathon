@@ -2,4 +2,4 @@ langchain
 langchain-anthropic
 langchain-community
 streamlit
-streamlit-lottie
+wikipedia
