@@ -62,7 +62,7 @@ if prompt:
         st.info(title_memory.buffer)
 
     with st.expander('Content History'):
-        st.info(script_memory.buffer)
+        st.info(content_memory.buffer)
 
     with st.expander('Wikipedia Research'):
         st.info(wiki_research)
