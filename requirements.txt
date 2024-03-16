@@ -1,0 +1,4 @@
+langchain
+langchain-anthropic
+langchain-community
+streamlit
